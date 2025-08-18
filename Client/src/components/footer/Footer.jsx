@@ -7,9 +7,13 @@ import {
   Linkedin,
   Youtube,
 } from "lucide-react";
+import { FaMoon, FaSun } from "react-icons/fa";
 import Logo from "../logo/Logo";
+import { useThemeContext } from "../../context/ThemeContext";
 
 export default function Footer() {
+  const { theme, toggleTheme } = useThemeContext();
+
   return (
     <footer className="bg-gray-100 text-gray-800 dark:bg-gradient-to-r dark:from-[#182c43] dark:to-[#175353] dark:text-gray-300 pt-10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -25,7 +29,9 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Quick Links
+          </h2>
           <ul className="space-y-2">
             <li><Link to="/" className="hover:text-orange-500 dark:hover:text-orange-400">Home</Link></li>
             <li><Link to="/about" className="hover:text-orange-500 dark:hover:text-orange-400">About Us</Link></li>
@@ -37,7 +43,9 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Our Services</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Our Services
+          </h2>
           <ul className="space-y-2">
             <li><Link to="/appointments" className="hover:text-orange-500 dark:hover:text-orange-400">Book Appointment</Link></li>
             <li><Link to="/doctors" className="hover:text-orange-500 dark:hover:text-orange-400">Find Doctors</Link></li>
@@ -48,7 +56,9 @@ export default function Footer() {
 
         {/* Contact & Social */}
         <div>
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contact Us</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+            Contact Us
+          </h2>
           <p className="dark:text-gray-300">Email: support@medicare.com</p>
           <p className="dark:text-gray-300">Phone: +91 98765 43210</p>
           <p className="dark:text-gray-300">Address: 123 Health Street, Pune, India</p>
@@ -63,8 +73,17 @@ export default function Footer() {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 py-4 text-center text-sm text-gray-600 dark:text-gray-400">
-        &copy; {new Date().getFullYear()} MediCare. All Rights Reserved.
+      <div className="border-t border-gray-300 dark:border-gray-700 mt-10 py-4 px-6 flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
+        <span>&copy; {new Date().getFullYear()} MediCare. All Rights Reserved.</span>
+
+        {/* Theme Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="flex items-center space-x-2 text-gray-700 dark:text-gray-200 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+        >
+          {theme === "dark" ? <FaSun size={18} /> : <FaMoon size={18} />}
+          <span className="text-sm">{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
+        </button>
       </div>
     </footer>
   );

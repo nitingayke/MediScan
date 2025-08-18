@@ -62,6 +62,9 @@ export default function PatientSignupForm() {
                     <InputField label="First Name" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="John" />
                     <InputField label="Last Name" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Doe" />
 
+                    <InputField label="Phone" id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" />
+                    <InputField label="Email" id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@example.com" />
+
                     <InputField label="Date of Birth" id="dob" type="date" name="dob" value={formData.dob} onChange={handleChange} />
 
                     <div>
@@ -82,9 +85,6 @@ export default function PatientSignupForm() {
                             <option>Other</option>
                         </select>
                     </div>
-
-                    <InputField label="Phone" id="phone" type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 98765 43210" />
-                    <InputField label="Email" id="email" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="you@example.com" />
 
                     {/* Address */}
                     <div className="md:col-span-2">
