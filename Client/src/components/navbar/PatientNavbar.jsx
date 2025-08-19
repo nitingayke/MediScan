@@ -66,7 +66,7 @@ export default function PatientNavbar() {
                 <Link
                   to={link?.path ?? "/"}
                   className={`flex items-center space-x-2 px-3 py-1.5 rounded-md transition-all duration-300
-                    ${location?.pathname === link?.path
+                    ${(location.pathname === link?.path || location.pathname.startsWith(link?.path + "/"))
                       ? "bg-green-500 text-white shadow-md"
                       : "hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-100/50 dark:hover:bg-gray-800/50"
                     }`}
