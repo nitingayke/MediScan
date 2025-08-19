@@ -100,7 +100,7 @@ export default function NotFoundPage() {
                   <button
                     key={item?.id}
                     onClick={() => navigate(item?.path ?? "/")}
-                    className="px-3 py-2 bg-white dark:bg-neutral-900 text-green-600 dark:text-green-300 text-sm rounded-lg dark:border-gray-600 flex items-center hover:bg-green-50 dark:hover:bg-neutral-800 transition"
+                    className="px-3 py-2 bg-white dark:bg-neutral-900 border text-green-600 dark:text-green-300 text-sm rounded-lg dark:border-gray-600 flex items-center hover:bg-green-50 dark:hover:bg-neutral-800 transition"
                   >
                     {item?.icon}
                     {item?.title}

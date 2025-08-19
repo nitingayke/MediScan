@@ -95,7 +95,7 @@ export default function PatientNavbar() {
                 />
               </button>
             ) : (
-              <div className="hidden md:flex !space-x-3">
+              <div className="hidden md:flex">
                 <Button
                   component={Link}
                   to="/login"
@@ -104,15 +104,6 @@ export default function PatientNavbar() {
                   className="!border-green-500 !text-green-500"
                 >
                   Login
-                </Button>
-                <Button
-                  component={Link}
-                  to="/register"
-                  variant="contained"
-                  size="small"
-                  className="!bg-green-500"
-                >
-                  Register
                 </Button>
               </div>
             )}
@@ -195,7 +186,7 @@ export default function PatientNavbar() {
               toggleTheme={toggleTheme}
             />
           ) : (
-            <div className="flex flex-col px-4 !space-y-2">
+            <div className="flex flex-col px-4">
               <Button
                 component={Link}
                 to="/login"
@@ -206,16 +197,6 @@ export default function PatientNavbar() {
               >
                 Login
               </Button>
-              <Button
-                component={Link}
-                to="/register"
-                variant="contained"
-                size="medium"
-                className="!bg-green-500"
-                onClick={() => setDrawerOpen(false)}
-              >
-                Register
-              </Button>
             </div>
           )}
         </div>
@@ -225,7 +206,7 @@ export default function PatientNavbar() {
 }
 
 function ProfileMenuItems({ onClose, toggleTheme }) {
-  const { loginPatient } = usePatientContext();
+  const { loginPatient, patientLogout } = usePatientContext();
 
   return (
     <>
@@ -264,7 +245,7 @@ function ProfileMenuItems({ onClose, toggleTheme }) {
       <MenuItem
         className="!py-2"
         onClick={() => {
-          console.log("Logout");
+          patientLogout();
           onClose?.();
         }}
       >
