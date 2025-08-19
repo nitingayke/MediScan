@@ -48,7 +48,7 @@ export default function NotFoundPage() {
 
 
   return (
-    <div className="min-h-screen w-full">
+    <div className=" w-full">
       <div className="max-w-5xl bg-white dark:dark:bg-neutral-800/50 rounded-xl shadow-md mx-auto border border-gray-200 dark:border-gray-700">
         <div className="md:flex">
           {/* Left: Info */}

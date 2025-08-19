@@ -55,7 +55,7 @@ export default function LoginForm() {
 
         <h2 className="text-3xl font-bold text-center mb-6 dark:text-white">
           Login as{" "}
-          <span className="text-green-600">{formattedRole}</span>
+          <span className="text-green-500">{formattedRole}</span>
         </h2>
 
         <div className="mb-4">
@@ -92,10 +92,10 @@ export default function LoginForm() {
         </div>
 
         <div className="flex justify-between items-center mb-4">
-          <label className="flex items-center text-sm text-green-600">
+          <label className="flex items-center text-sm text-green-500">
             <input type="checkbox" className="mr-2" /> Remember me
           </label>
-          <Link to={`/${role.toLowerCase()}/forgot-password`} className="text-sm text-green-600">
+          <Link to={`/${role.toLowerCase()}/forgot-password`} className="text-sm text-green-500">
             Forgot Password?
           </Link>
         </div>
@@ -112,7 +112,7 @@ export default function LoginForm() {
 
           <p className="text-center text-sm mt-4 text-[#718096]">
             Don't have an account?{" "}
-            <Link to={`/${role.toLowerCase()}/signup`} className="text-green-600">
+            <Link to={`/${role.toLowerCase()}/signup`} className="text-green-500">
               Create now
             </Link>
           </p>

@@ -51,7 +51,7 @@ export default function PatientSignupForm() {
 
     return (
         <div className="relative w-full md:w-1/2 h-screen flex flex-col items-center justify-center bg-white dark:bg-neutral-900 transition-colors duration-300 p-4">
-            <div className="h-full border-white mx-auto w-full max-w-xl bg-transparent sm:p-5 md:p-8 overflow-auto no-scrollbar" >
+            <div className="h-full border-white mx-auto w-full max-w-2xl bg-transparent sm:py-4 lg:p-8 overflow-auto no-scrollbar" >
                 <BackButton position="top-5 left-5" className="hidden sm:flex" />
 
                 <h2 className="text-3xl font-bold text-center mb-6 dark:text-white">
