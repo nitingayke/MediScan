@@ -7,7 +7,7 @@ export default function LoginCover() {
   const navigate = useNavigate();
 
   return (
-    <div className="hidden md:flex flex-col items-center relative bg-[#1A8151] w-full md:w-1/2 p-6 md:p-8 min-h-screen overflow-hidden">
+    <div className="hidden md:flex flex-col items-center relative bg-primary w-full md:w-1/2 p-6 md:p-8 min-h-screen overflow-hidden">
 
       <div className="absolute -top-32 -right-32 bg-gradient-to-r from-[#EDF2F730] to-[#EDF2F70] rounded-full w-64 h-64 md:w-80 md:h-80"></div>
       <div className="absolute bottom-20 -left-20 bg-gradient-to-r from-[#EDF2F710] to-[#EDF2F705] rounded-full w-48 h-48"></div>
@@ -32,7 +32,7 @@ export default function LoginCover() {
             alt="coverimage"
             className="hidden lg:block absolute top-6 right-0 w-32 md:w-40"
           />
-          <h1 className="text-[#1A8151] font-bold text-2xl md:text-3xl w-3/4 mb-2">
+          <h1 className="text-primary font-bold text-2xl md:text-3xl w-3/4 mb-2">
             Welcome back <br />to HealthAI
           </h1>
           <p className="text-[#718096] text-sm md:text-base w-full lg:w-80 mb-0">
@@ -42,7 +42,7 @@ export default function LoginCover() {
           </p>
           <button
             onClick={() => navigate("/learn-more")}
-            className="bg-[#1A8151] h-10 px-6 rounded-3xl text-white text-sm md:text-base hover:bg-[#156f43] transition-colors mt-4"
+            className="bg-primary h-10 px-6 rounded-3xl text-white text-sm md:text-base hover:bg-[#156f43] transition-colors mt-4"
           >
             Learn more
           </button>

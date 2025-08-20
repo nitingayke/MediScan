@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import LoginCover from "../components/login/LoginCover";
 
 export default function DoctorSignupLayout({ children }) {
 

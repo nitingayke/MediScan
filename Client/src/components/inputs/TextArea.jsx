@@ -1,0 +1,59 @@
+// src/components/ui/inputs/TextArea.jsx
+import PropTypes from 'prop-types';
+
+export default function TextArea({
+    label,
+    id,
+    name,
+    value,
+    onChange,
+    placeholder,
+    required = false,
+    className = '',
+    disabled = false,
+    rows = 3,
+    ...props
+}) {
+    const inputClass = `
+    w-full px-4 py-2 rounded-lg bg-[#F7FAFC] dark:bg-neutral-800 
+    text-gray-900 dark:text-gray-100 border border-[#CBD5E0] 
+    focus:outline-none focus:ring-2 focus:ring-green-600
+    ${disabled ? 'opacity-60 cursor-not-allowed' : ''}
+    ${className}
+  `;
+
+    return (
+        <>
+            {label && (
+                <label htmlFor={id} className="block text-sm mb-1 text-gray-700 dark:text-gray-300">
+                    {label}
+                </label>
+            )}
+            <textarea
+                id={id}
+                name={name}
+                value={value}
+                onChange={onChange}
+                placeholder={placeholder}
+                className={inputClass}
+                required={required}
+                disabled={disabled}
+                rows={rows}
+                {...props}
+            />
+        </>
+    );
+};
+
+TextArea.propTypes = {
+    label: PropTypes.string,
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    required: PropTypes.bool,
+    className: PropTypes.string,
+    disabled: PropTypes.bool,
+    rows: PropTypes.number,
+};

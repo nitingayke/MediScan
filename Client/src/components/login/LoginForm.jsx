@@ -103,7 +103,7 @@ export default function LoginForm() {
         <button
           onClick={handleLogin}
           disabled={loading}
-          className="w-full bg-[#1A8151] hover:bg-[#13623d] text-white py-2 rounded-lg font-medium transition disabled:opacity-60"
+          className="w-full bg-primary hover:bg-[#13623d] text-white py-2 rounded-lg font-medium transition disabled:opacity-60"
         >
           {loading ? "Signing in..." : "Sign in"}
         </button>

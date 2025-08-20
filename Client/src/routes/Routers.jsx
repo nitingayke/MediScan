@@ -7,6 +7,7 @@ import Login from "../pages/login/Login";
 import PatientSignup from "../pages/signup/patient/PatientSignup";
 import LandingPage from "../pages/LandingPage";
 import HomePage from "../pages/HomePage";
+import DoctorSignup from "../pages/signup/doctor/DoctorSignup";
 
 export default function Routers() {
   return (
@@ -17,6 +18,7 @@ export default function Routers() {
       <Route path="/login" element={<RoleSelector />} />
       <Route path="/:role/login" element={<Login />} />
       <Route path="/patient/signup" element={<PatientSignup />} />
+      <Route path="/doctor/signup" element={<DoctorSignup />} />
 
       <Route path="*" element={<PatientLayout><NotFound /></PatientLayout>} />
     </Routes>
