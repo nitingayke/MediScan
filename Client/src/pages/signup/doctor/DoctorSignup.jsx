@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AccountSetup from "./steps/AccountSetup";
 import BasicInfo from "./steps/BasicInfo";
 import ProfessionalInfo from "./steps/ProfessionalInfo";
@@ -13,6 +13,24 @@ export default function DoctorSignup() {
 
     const nextStep = () => setStep(step + 1);
     const prevStep = () => setStep(step - 1);
+
+    useEffect(() => {
+        const handleBeforeUnload = (e) => {
+            e.preventDefault();
+            e.returnValue = "Your progress will be lost. Are you sure you want to leave?";
+        };
+
+        if (step >= 2) {
+            window.addEventListener("beforeunload", handleBeforeUnload);
+        } else {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        }
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, [step]);
+
 
     const getStepComponent = () => {
         switch (step) {
@@ -61,7 +79,7 @@ export default function DoctorSignup() {
                     />
                 );
             case 6:
-                return <ReviewSubmit formData={formData} prevStep={prevStep} />;
+                return <ReviewSubmit formData={formData} prevStep={prevStep} handlePage={setStep} />;
 
             default:
                 return null;

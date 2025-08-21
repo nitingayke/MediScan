@@ -81,7 +81,7 @@ export default function OTPInput({
     };
 
     const inputClass = `
-    w-12 h-12 text-center rounded-lg bg-[#F7FAFC] dark:bg-neutral-800 
+    w-10 h-12 sm:w-12 sm:h-12 text-center rounded-lg bg-[#F7FAFC] dark:bg-neutral-800 
     text-gray-900 dark:text-gray-100 border border-[#CBD5E0] 
     focus:outline-none focus:ring-2 focus:ring-green-600
     ${disabled ? 'opacity-60 cursor-not-allowed' : ''}
